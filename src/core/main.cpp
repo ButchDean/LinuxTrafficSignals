@@ -144,6 +144,16 @@ int main()
 
         cycle++;
 
+        nodelay(stdscr, TRUE);
+
+        int key;
+        if((key = getch()) == ERR)
+            continue;
+        else
+        {
+            break;
+        }
+
     }
 
     // Clean up Curses
