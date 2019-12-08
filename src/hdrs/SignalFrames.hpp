@@ -17,14 +17,14 @@ namespace NSSignalFrames
 
             void ReadFrameData(const std::string& filename, std::vector<std::string>& asciiFrameOut)
             {
-                std::ifstream frameFile("assets/" + filename);
+                std::ifstream frameFile("../assets/" + filename);
 
 				line.clear();
 
                 if(frameFile.is_open())
                 {
                     while(std::getline(frameFile, line))
-                    {	
+                    {
 						// Strip out commented lines so they aren't processed.
 						if(line.find("#") != std::string::npos)
 							continue;
