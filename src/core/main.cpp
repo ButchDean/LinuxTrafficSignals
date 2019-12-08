@@ -27,19 +27,19 @@ void SetUpColors()
 
 void RenderColoredChar(const unsigned int row, const unsigned int col, const char ch)
 {
-	auto setAttrOnStatus = [](const short color, const bool on) 
-			{ 
+	auto setAttrOnStatus = [](const short color, const bool on)
+			{
 				if(on)
 					attron(COLOR_PAIR(color));
 				else
 					attron(COLOR_PAIR(OFF_LIGHT_PAIR));
 			};
-	auto setAttrOffStatus = [](const short color, const bool on) 
+	auto setAttrOffStatus = [](const short color, const bool on)
 			{
-				if(on) 
+				if(on)
 					attroff(COLOR_PAIR(color));
 				else
-					attron(COLOR_PAIR(OFF_LIGHT_PAIR)); 
+					attron(COLOR_PAIR(OFF_LIGHT_PAIR));
 			};
 
 	switch(ch)
@@ -65,7 +65,7 @@ void RenderColoredChar(const unsigned int row, const unsigned int col, const cha
 			setAttrOffStatus(GREEN_LIGHT_PAIR, CLightsStatus::LightsStatusInst()->GetStatus(GREEN));
 			break;
 		default:
-			break;				
+			break;
 	}
 }
 
@@ -89,6 +89,9 @@ void StatusGO()
 
 int main()
 {
+
+	bool holdSignalLong = true;
+
     std::unique_ptr<NSNcursesDisplay::CNcursesDisplay> frame(new NSNcursesDisplay::CNcursesDisplay());
 
     frame->MapAndDisplaySignal();
@@ -132,15 +135,27 @@ int main()
             cycle = 0;
 
         if(cycle % 3 == 0)
+		{
             StatusGO();
+			holdSignalLong = true;
+		}
         else if(cycle % 3 == 1)
+		{
             StatusPREPARE_TO_STOP();
+			holdSignalLong = true;
+		}
         else if(cycle % 3 == 2)
+		{
             StatusSTOP();
+			holdSignalLong = false;
+		}
 
 	    refresh();
 
-        std::this_thread::sleep_for(std::chrono::seconds(2));
+		if(holdSignalLong)
+        	std::this_thread::sleep_for(std::chrono::seconds(3));
+		else
+			std::this_thread::sleep_for(std::chrono::seconds(1));
 
         cycle++;
 
