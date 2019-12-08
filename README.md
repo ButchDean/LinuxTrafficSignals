@@ -6,13 +6,17 @@ North American traffic signals with ncurses on Linux.
 ![](ltsGo.JPG)
 
 ## Build
-To build the code just enter:
+First create a build directory from project root and go into it:
 ```
-$ cmake . && make
+$ mkdir build && cd build
+```
+Then build the code just enter:
+```
+$ cmake .. && make
 ```
 
 ## Run
-To run the built program you do:
+To run the built program in the build directory do:
 ```
 $ ./lts
 ```
