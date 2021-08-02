@@ -33,3 +33,6 @@
 
 # Application specific
 *~
+
+cmake-build-debug
+.idea
