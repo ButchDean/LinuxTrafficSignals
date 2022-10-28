@@ -6,13 +6,12 @@ North American traffic signals with ncurses on Linux.
 ![](ltsGo.JPG)
 
 ## Build
-First create a build directory from project root and go into it:
 ```
-$ mkdir build && cd build
+$ cmake -S . -B build
 ```
-Then build the code just enter:
+Then build the code:
 ```
-$ cmake .. && make
+$ cmake --build build -j$(nproc)
 ```
 
 ## Run
