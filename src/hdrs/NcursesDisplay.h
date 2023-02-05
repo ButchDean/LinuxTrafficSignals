@@ -1,7 +1,7 @@
 #ifndef _NCURSES_DISPLAY_
 #define _NCURSES_DISPLAY_
 
-#include <SignalFrames.hpp>
+#include <SignalFrames.h>
 
 #include <curses.h>
 

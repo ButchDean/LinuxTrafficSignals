@@ -10,7 +10,7 @@ include_directories(${CURSES_INCLUDE_DIR})
 include_directories(src/hdrs)
 
 add_executable(lts 
-			   src/core/main.cpp 
-			   src/transform/SequenceLogic.cpp)
+			   src/core/main.cc
+			   src/transform/SequenceLogic.cc)
 
 target_link_libraries(lts ${CURSES_LIBRARIES})
