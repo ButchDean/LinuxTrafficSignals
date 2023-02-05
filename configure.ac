@@ -11,7 +11,8 @@ AC_CONFIG_MACRO_DIR([m4])
 
 AM_INIT_AUTOMAKE([foreign -Wall -Werror subdir-objects])
 
-AC_PROG_CXX
+AC_LANG(C++)
+AC_PROG_CXXCPP
 
 AC_SEARCH_LIBS([initscr], [curses], [have_ncurses=yes], [have_ncurses=no])
 
