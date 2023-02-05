@@ -1,4 +1,4 @@
-#include <SequenceLogic.hpp>
+#include <SequenceLogic.h>
 
 #define SHIFTLEFT(n) (1 << n)
 

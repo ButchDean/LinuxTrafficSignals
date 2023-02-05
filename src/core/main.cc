@@ -2,8 +2,8 @@
 #include <cassert>
 #include <thread>
 #include <chrono>
-#include <NcursesDisplay.hpp>
-#include <SequenceLogic.hpp>
+#include <NcursesDisplay.h>
+#include <SequenceLogic.h>
 
 using namespace SequenceLogic;
 
