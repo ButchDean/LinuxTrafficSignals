@@ -14,7 +14,7 @@ $ cmake -S . -B build
 ```
 Then build the code:
 ```
-$ cmake --build build -j$(nproc)
+$ cmake --build build
 ```
 ### Automake
 ```
@@ -23,7 +23,7 @@ $ ./configure
 ```
 Then to build the project:
 ```
-$ make -j$(nproc)
+$ make
 ```
 
 ## Run
